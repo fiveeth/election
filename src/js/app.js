@@ -6,8 +6,8 @@ App = {
     return await App.initWeb3();
   },
 
+  // 初始化web3
   initWeb3: async function() {
-    // 初始化web3
     if(window.ethereum) {
       App.web3Provider = window.ethereum;
       try {
@@ -24,6 +24,7 @@ App = {
     return App.initContract();
   },
 
+  // 初始化合约
   initContract: function() {
     $.getJSON("../../build/contracts/Election.json", function(election) {
       App.contracts.Election = TruffleContract(election);
